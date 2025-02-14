@@ -98,7 +98,7 @@ python main.py --input sample.pdf --output results.json
   - AC2: Consistent scoring (±5% variance for same inputs).
 - **Skill Gap Identification**
   - AC3: 90% accuracy in identifying critical gaps.
-[LLM Interaction Documentation](chats/Requirements Engineering LLM Interactions.txt)
+#### [LLM Interaction Documentation](./chats/requirements_engineering_LLM_interactions.txt)
 
 ### Phase 2: Architecture
 - **Command-line Interface Specification:** (Inline description of CLI arguments)
