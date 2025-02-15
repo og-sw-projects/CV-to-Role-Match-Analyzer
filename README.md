@@ -139,9 +139,43 @@ Both team members share responsibility for code review, documentation, integrati
 #### [LLM Interaction Documentation](./chats/architecture_LLM_chats.txt)
 
 ## Design
-- **Simple Design Principles (XP):** (Inline summary of how XP principles were followed)
-- **CRC Description of Key Classes:** (Inline brief description of key classes and their responsibilities)
-- [LLM Interaction Documentation](link-to-llm-docs)
+#### CRC Description of Key Classes:
+- **CVAnalyzer**
+  - *Responsibilities*
+    - Coordinates the overall analysis process
+    - Extracts text from CV PDFs
+    - Processes role descriptions
+    - Generates match analysis reports
+    - Manages LLM interactions for analysis
+  - *Collaborators*
+    - AnalysisReport
+    - SkillGap
+    - LLM Client (external)
+    - PDF Processor (external)
+- **AnalysisReport**
+  - *Responsibilities*
+    - Holds analysis results (match score, gaps, recommendations)
+    - Converts analysis data to JSON format
+    - Validates score ranges (0-100)
+    - Maintains structured representation of analysis results
+  - *Collaborators*
+    - SkillGap
+    - JSON library (external)
+- **SkillGap**
+  - *Responsibilities*
+    - Represents a single identified skill gap
+    - Stores gap category and description
+    - Associates gap with importance level (critical/important/nice-to-have)
+  - *Collaborators*
+    - SkillGapType
+- **SkillGapType**
+  - *Responsibilities*
+    - Defines valid gap importance levels
+    - Ensures type safety for gap classifications
+    - Provides string representation of gap types
+  - *Collaborators*
+    - None (Pure enumeration)
+#### [LLM Interaction Documentation](./chats/design_LLM_interactions.txt)
 
 ## Coding & Testing
 
