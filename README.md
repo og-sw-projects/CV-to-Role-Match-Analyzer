@@ -10,7 +10,7 @@ The output JSON file includes the following key information:
 *   **Categorized Skill Gaps:** Identification of specific skills and qualifications mentioned in the job description that are missing or underrepresented in the CV. These gaps are categorized for clarity (Education, Work Experience, Skills, Certifications).
 *   **Specific Improvement Recommendations:**  Actionable suggestions for the candidate to improve their CV and better align it with the target role.  These recommendations might include highlighting relevant projects, acquiring new skills, or rephrasing existing experience.
 
-### Key Features
+#### Key Features
 
 *   **Automated Analysis:**  Eliminates the need for manual CV screening, saving recruiters valuable time.
 *   **Objective Evaluation:**  Provides a data-driven approach to candidate assessment, reducing bias and promoting fairness.
@@ -18,7 +18,7 @@ The output JSON file includes the following key information:
 *   **JSON Output:**  Enables easy integration with other recruitment systems and tools.
 *   **PDF Input:** Accepts CVs and Job Descriptions in the commonly used PDF format.
 
-### Target Audience
+#### Target Audience
 
 This tool is beneficial for:
 
@@ -26,7 +26,7 @@ This tool is beneficial for:
 *   **Hiring Managers:**  Gain a deeper understanding of candidate strengths and weaknesses.
 *   **Job Seekers:**  Identify areas where their CV can be improved to better match target roles.
 
-### Technical Stack
+#### Technical Stack
 
 *   Programming Language: Python
 *   Libraries/Frameworks: PyPDF2, Pandas
