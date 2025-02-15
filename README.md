@@ -115,78 +115,27 @@ cvanalyzer --version
 #### File System Interactions
 The system interacts with files in the following manner:
 - Input Files:
-  - CV: PDF format (*.pdf), maximum size 10MB.
-  - Role Description: Text file (*.txt), maximum 2000 characters.
+  - CV: PDF format.
+  - Role Description: Text file.
 - Output Files:
-  - Analysis Report: JSON format containing match score, skill gaps, and recommendations.
-  - Default output structure:
-<pre>
-output/
-  └── YYYYMMDD_HHMMSS/
-      └── analysis_report.json
-</pre>
+  - Analysis Report: JSON format containing match score, skill gaps, and recommendations. Output directory can be specified via command line. If not specified, a default output location will be used.
 - Temporary Files:
-  - During analysis, the system creates temporary files that are automatically cleaned up:
-<pre>
-temp/
-└── session_<uuid>/
-    ├── extracted_cv.json
-    ├── extracted_role.json
-    └── analysis_data.json
-</pre>
+  - The system utilizes temporary files during analysis. These files are automatically managed and cleaned up by the system.
 
 #### Third-Party Libraries
-The system relies on the following libraries:
-- PyPDF2 (v3.0.0+): PDF text extraction and processing
-- pandas (v2.0.0+): Data structuring and analysis
-- google.generativeai (v1.0.0+): Gemini API integration
-- click (v8.0.0+): Command-line interface management
-- pydantic (v2.0.0+): Data validation and modeling
+The system leverages third-party libraries for specific functionalities:
+- PDF processing and text extraction.
+- Data structuring and analysis.
+- Large Language Model (LLM) API integration.
+- Command-line interface management.
+- Data validation.
 
 #### Team Member Responsibilities
-*Team Member 1: Responsible for CLI and data handling components:*
-- Implementation of command-line interface
-- PDF processing and text extraction
-- Input validation and error handling
-- Data persistence management
-- Repository layer implementation
-- Key files:
-<pre>
-src/
-├── cli/
-│   ├── commands.py
-│   └── validators.py
-├── repository/
-│   ├── pdf_repository.py
-│   ├── role_repository.py
-│   └── analysis_repository.py
-└── models/
-    ├── cv_model.py
-    └── role_model.py
-</pre>
-*Team Member 2: Responsible for analysis and API integration:*
-- Gemini API integration
-- Prompt engineering implementation
-- Analysis algorithms development
-- Report generation
-- Service layer implementation
-- Key files:
-<pre>
-src/
-├── services/
-│   ├── analysis_service.py
-│   ├── matching_service.py
-│   └── report_service.py
-└── infrastructure/
-    ├── gemini_client.py
-    ├── prompt_manager.py
-    └── response_processor.py
-</pre>
-*Both team members share responsibility for:*
-- Code review
-- Documentation
-- Integration testing
-- Performance optimization
+The project is divided into two main areas of responsibility:
+- Data Handling and Interface: This area encompasses managing input data (CV and role description), interacting with the file system, and providing the command-line interface.
+- Analysis and LLM Integration: This area focuses on integrating with the LLM API, developing the analysis algorithms, and generating the final report.
+
+Both team members share responsibility for code review, documentation, integration testing, and performance optimization.
 #### [LLM Interaction Documentation](./chats/architecture_LLM_chats.txt)
 
 ## Design
