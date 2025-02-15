@@ -132,3 +132,64 @@ This architecture ensures:
 * Testable components (FR3.1, FR3.2)
 * Scalable structure
 Would you like me to elaborate on any aspect of this architecture?
+
+Prompt:
+
+
+rewrite the readme.md file section i gave you. Improve it such it is both only architecture related (and not design/implementation) but still adhere to the guidelines i have for this section. The guidelines are:
+
+- Define command-line interface specification (inline).
+
+- Plan file system interactions, i.e., input/output (inline).
+
+- Your feature may use additional files for input and output.
+
+- Identify relevant third-party libraries (inline).
+
+- Define team member responsibilities (inline).
+
+- Document LLM interactions (link).
+
+
+Response:
+
+
+Command-line Interface Specification
+Bash
+
+# Main analysis command
+cvanalyzer analyze --cv <path_to_pdf> --role <path_to_txt>
+
+# Optional parameters
+cvanalyzer analyze --cv <path_to_pdf> --role <path_to_txt> --output-dir <path>
+cvanalyzer analyze --cv <path_to_pdf> --role <path_to_txt> --verbose [0|1|2]
+
+# Utility commands
+cvanalyzer --help
+cvanalyzer --version
+File System Interactions
+The system interacts with the file system for input and output.
+
+Input Files:
+CV: PDF format.
+Role Description: Text file.
+Output Files:
+Analysis Report: JSON format containing match score, skill gaps, and recommendations. Output directory can be specified via command line. If not specified, a default output location will be used.
+Temporary Files: The system utilizes temporary files during analysis. These files are automatically managed and cleaned up by the system.
+Third-Party Libraries
+The system leverages third-party libraries for specific functionalities:
+
+PDF processing and text extraction.
+Data structuring and analysis.
+Large Language Model (LLM) API integration.
+Command-line interface management.
+Data validation.
+Team Member Responsibilities
+The project is divided into two main areas of responsibility:
+
+Data Handling and Interface: This area encompasses managing input data (CV and role description), interacting with the file system, and providing the command-line interface.
+Analysis and LLM Integration: This area focuses on integrating with the LLM API, developing the analysis algorithms, and generating the final report.
+Both team members share responsibility for code review, documentation, integration testing, and performance optimization.
+
+LLM Interaction Documentation
+LLM Interaction Documentation
